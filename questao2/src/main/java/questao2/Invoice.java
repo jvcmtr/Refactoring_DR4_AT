@@ -10,6 +10,11 @@ package questao2;
     que poderia eliminá-lo. Use código para ilustrar.
 */
 
+/*
+    (pt-br) Infelizmente o enunciado da questão orienta a corrigir somente **um** "bas smell", sendo assim, o escolhido foi "codigo duplicado"
+    (eng) Unfortunately, the question prompt instructs to fix only **one** "bad smell", therefore, the one chosen was "duplicated code."
+ */
+
 public class Invoice {
     public String clientName;
     public String clientEmail;
@@ -26,37 +31,22 @@ public class Invoice {
             System.out.println("Email inválido. Falha no envio.");
         }
 
-        if (type == 1) {
-            System.out.println("Nota fiscal simples");
-        } else if (type == 2) {
-            System.out.println("Nota fiscal com imposto");
-        } else if (type == -1) {
-            // caso nunca ocorre, mas está presente
-            System.out.println("Nota fiscal fantasma");
-        } else {
-            System.out.println("Tipo desconhecido");
-        }
-        //imprimir nota
-        System.out.println("--- NOTA FISCAL ---");
-        System.out.println("Cliente: " + clientName);
-        System.out.println("Valor: R$ " + amount);
+        String invoiceString = "--- NOTA FISCAL ---\n" +
+            "Cliente: " + clientName + "\n" +
+            "Valor: R$ " + amount + "\n" +
+            "Tipo: " + (
+                type == 1 ? "Simples" 
+                : type == 2 ? "Com imposto" 
+                : "Desconhecido"
+            ) + "\n" 
+            + "---------------------";
 
-        if (type == 1) {
-            System.out.println("Tipo: Simples");
-        } else if (type == 2) {
-            System.out.println("Tipo: Com imposto");
-        } else {
-            System.out.println("Tipo: Desconhecido");
-        }
-        System.out.println("---------------------");
+        //imprimir nota
+        System.out.println( invoiceString );
+        
         // Enviar nota para email
         System.out.println("Enviando nota fiscal para: " + clientEmail);
-        String nota = "--- NOTA FISCAL ---\n" +
-              "Cliente: " + clientName + "\n" +
-              "Valor: R$ " + amount + "\n" +
-              "Tipo: " + (type == 1 ? "Simples" : type == 2 ? "Com imposto" : "Desconhecido") + "\n" +
-              "---------------------";
-        enviarPorEmail(clientEmail, nota);
+        enviarPorEmail(clientEmail, invoiceString);
     }
 }
 
