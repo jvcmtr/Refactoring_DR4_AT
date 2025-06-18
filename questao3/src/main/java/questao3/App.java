@@ -26,10 +26,21 @@ public class App {
     public static double getDiscount(int customerType, boolean holiday) {
         double discount = 0;
 
-        if (customerType == 1) discount = 0.1;
-        else if (customerType == 2) discount = 0.15;
+        discount += getCustomerDiscount(customerType);
+        discount += getHolidayDiscount(holiday);
         
-        if (holiday) discount += 0.05;
         return discount;
+    }
+    
+    public static double getCustomerDiscount(int customerType){
+        return switch (customerType) {
+            case 1 -> 0.1;
+            case 2 -> 0.15;
+            default -> 0;
+        };
+    }
+
+    public static double getHolidayDiscount(boolean isHoliday){
+        return isHoliday? 0.05 : 0;
     }
 }
