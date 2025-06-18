@@ -27,10 +27,8 @@ public class X {
         } else {
             System.out.println("BAIXO");
         }
-        
+
         System.out.println("DEBUG: z = " + z);
-        if (z > 10 && z > 5) { 
-            System.out.println("ALTO");
-        }
+
     }
 }
