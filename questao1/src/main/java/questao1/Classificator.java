@@ -1,4 +1,11 @@
 package questao1;
+import questao1.classifications.Classification;
+import questao1.classifications.HighClassification;
+import questao1.classifications.LowClassification;
+import questao1.classifications.NullClassification;
+import questao1.classifications.RareCaseClassification;
+import java.util.Arrays;
+import java.util.List;
 
 /*
     1. 
@@ -18,14 +25,27 @@ package questao1;
     ou saída do terminal. 
  */
 
-public class Classificator {
+public class Classificator{
+    
+    // ⚠️ WARNING
+    /// Be aware that the order of the list also defines the priority of each classification in case of conflict
+    private final List<Classification> classifications = Arrays.asList(
+        new RareCaseClassification(),
+        new HighClassification(),
+        new LowClassification()
+    );
+
     public void ClassifyInt(int integer) {
-        if (integer > 10) {
-            System.out.println("ALTO");
-        } else if (integer == -9999) {
-            System.out.println("CASO RARO");
-        } else {
-            System.out.println("BAIXO");
+        
+        Classification foundClassification = new NullClassification();
+
+        for (Classification c : classifications) {
+            if( c.matchClassification(integer) ){
+                foundClassification = c;
+                break;
+            }
         }
+        
+        System.out.println( foundClassification.getName() );
     }
 }
