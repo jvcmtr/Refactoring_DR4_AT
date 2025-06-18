@@ -27,8 +27,5 @@ public class Classificator {
         } else {
             System.out.println("BAIXO");
         }
-
-        System.out.println("DEBUG: z = " + integer);
-
     }
 }
