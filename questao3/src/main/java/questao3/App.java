@@ -16,7 +16,10 @@ public class App {
 
     public static double calculatePrice(double basePrice, int customerType, boolean holiday) {
         double discount = getDiscount(customerType, holiday);
+        return applyDiscount(basePrice, discount);
+    }
 
+    public static double applyDiscount(double basePrice, double discount) {
         return basePrice * (1 - discount);
     }
 
