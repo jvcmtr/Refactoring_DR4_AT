@@ -12,8 +12,24 @@ import java.util.List;
 */
 
 public class User {
-    public String name;
-    public String email;
-    public List addresses;
+    private String name;
+    private String email;
+    private List addresses;
+
+    public User(String name, String email, List addresses){
+        this.name = name;
+        this.email = email;
+        this.addresses = addresses;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public List getAddresses() {
+        return addresses;
+    }
 }
 
