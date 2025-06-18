@@ -1,12 +1,13 @@
 package questao1.classifications;
 
 
-public class LowClassification extends Classification {    
-    private final String NAME = "BAIXO";
+
+public class MediumClassification extends Classification {    
+    private final String NAME = "MÉDIO";
     
     @Override
     public boolean matchClassification(int number){
-        return number < 10;
+        return number == 10;
     }
 
     @Override
@@ -14,3 +15,4 @@ public class LowClassification extends Classification {
         return NAME;
     }
 }
+

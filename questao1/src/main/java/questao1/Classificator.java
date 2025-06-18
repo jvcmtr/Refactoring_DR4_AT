@@ -1,11 +1,13 @@
 package questao1;
+import java.util.Arrays;
+import java.util.List;
+
 import questao1.classifications.Classification;
 import questao1.classifications.HighClassification;
 import questao1.classifications.LowClassification;
+import questao1.classifications.MediumClassification;
 import questao1.classifications.NullClassification;
 import questao1.classifications.RareCaseClassification;
-import java.util.Arrays;
-import java.util.List;
 
 /*
     1. 
@@ -32,6 +34,7 @@ public class Classificator{
     private final List<Classification> classifications = Arrays.asList(
         new RareCaseClassification(),
         new HighClassification(),
+        new MediumClassification(),
         new LowClassification()
     );
 
