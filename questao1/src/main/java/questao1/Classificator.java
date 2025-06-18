@@ -18,17 +18,17 @@ package questao1;
     ou saída do terminal. 
  */
 
-public class X {
-    public void y(int z) {
-        if (z > 10) {
+public class Classificator {
+    public void ClassifyInt(int integer) {
+        if (integer > 10) {
             System.out.println("ALTO");
-        } else if (z == -9999) {
+        } else if (integer == -9999) {
             System.out.println("CASO RARO");
         } else {
             System.out.println("BAIXO");
         }
 
-        System.out.println("DEBUG: z = " + z);
+        System.out.println("DEBUG: z = " + integer);
 
     }
 }
