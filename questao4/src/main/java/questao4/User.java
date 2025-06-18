@@ -14,9 +14,9 @@ import java.util.List;
 public class User {
     private String name;
     private String email;
-    private List addresses;
+    private List<Address> addresses;
 
-    public User(String name, String email, List addresses){
+    public User(String name, String email, List<Address> addresses){
         this.name = name;
         this.email = email;
         this.addresses = addresses;
@@ -28,7 +28,7 @@ public class User {
     public String getEmail() {
         return email;
     }
-    public List getAddresses() {
+    public List<Address>  getAddresses() {
         return addresses;
     }
 }
