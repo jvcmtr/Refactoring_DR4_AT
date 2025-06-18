@@ -39,6 +39,16 @@ public class Classificator{
     );
 
     public void ClassifyInt(int integer) {
+        var classification = getClassificationFor(integer);
+        System.out.println( classification.getName() );
+    }
+
+    public String GetClassificationValue(int integer){
+        var classification = getClassificationFor(integer);
+        return classification.getName(); 
+    }
+
+    private Classification getClassificationFor(int integer) {
         
         Classification foundClassification = new NullClassification();
 
@@ -49,6 +59,6 @@ public class Classificator{
             }
         }
         
-        System.out.println( foundClassification.getName() );
+        return foundClassification;
     }
 }
