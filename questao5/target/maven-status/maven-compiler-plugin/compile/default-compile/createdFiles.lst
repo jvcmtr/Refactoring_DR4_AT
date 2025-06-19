@@ -1,0 +1,7 @@
+questao5\App.class
+questao5\notificationChannels\SmsChannel.class
+questao5\notificationChannels\EmailChannel.class
+questao5\NotificationService.class
+questao5\notificationChannels\INotificationChannel.class
+questao5\notificationChannels\PushChannel.class
+questao5\notificationChannels\BaseChannel.class
