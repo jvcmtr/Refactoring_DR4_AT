@@ -1,5 +1,13 @@
 package questao5;
 
+import java.util.Arrays;
+import java.util.List;
+
+import questao5.notificationChannels.EmailChannel;
+import questao5.notificationChannels.INotificationChannel;
+import questao5.notificationChannels.PushChannel;
+import questao5.notificationChannels.SmsChannel;
+
 /*
 
     Refatore esse código aplicando **polimorfismo**
@@ -9,13 +17,24 @@ package questao5;
 */
 
 public class NotificationService {
+
+    private List<INotificationChannel> availableChannels = Arrays.asList(
+        new EmailChannel(),
+        new SmsChannel(),
+        new PushChannel()
+    );
+
     public void notifyUser(String channel, String message) {
-        if (channel.equals("EMAIL")) {
-            System.out.println("Sending EMAIL: " + message);
-        } else if (channel.equals("SMS")) {
-            System.out.println("Sending SMS: " + message);
-        } else if (channel.equals("PUSH")) {
-            System.out.println("Sending PUSH: " + message);
+        
+        for (INotificationChannel c : availableChannels) {
+            if(c.getChannelName().equals(channel)){
+                c.sendMessage(message);
+                return;
+            }  
         }
+
+        throw new IllegalArgumentException("The channel with the provided name is not available");
     }
 }
+
+
