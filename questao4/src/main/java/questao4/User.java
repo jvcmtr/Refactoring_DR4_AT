@@ -33,7 +33,7 @@ public class User {
     public String getEmail() {
         return email;
     }
-    public List<Address>  getAddress() {
+    public List<Address> getAddresses() {
         return new ArrayList<>(addresses);
     }
 }
