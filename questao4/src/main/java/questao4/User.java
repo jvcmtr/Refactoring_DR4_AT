@@ -23,6 +23,10 @@ public class User {
         this.addresses = new ArrayList<>(addresses);
     }
 
+    public void addAddress(Address address){
+        addresses.add(address);
+    }
+
     public String getName() {
         return name;
     }
